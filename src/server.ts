@@ -7,8 +7,12 @@ import * as logger from 'morgan';
 // If you need the path module to find your UI files, uncomment the line below.
 // import * as path from 'path';
 
+// tslint:disable no-commented-code
 
 // TODO: Import your routers...
+import { HelloWorldRouter } from '@nertz/helloworld-handlers-v1';
+
+
 
 
 /**
@@ -47,12 +51,16 @@ export class Server {
         this.app.use('/', router);
 
         // TODO: Set up routes here...
+        /*
         this.app.get('*', (req, res) => {
             res.send('It worked!  Now remove this handler and modify your server setup.');
         });
+        */
+
         // Here are some examples...
-        // this.app.use('/nertz/api/version/service1', MyRouter1);
-        // this.app.use('/nertz/api/version/service2', MyRouter2);
+        this.app.use('/', HelloWorldRouter);
+        // this.app.use('/nertz/api/service1/v2', MyRouter1);
+        // this.app.use('/nertz/api/service2/v2', MyRouter2);
 
         // If you have an UI component, you can uncomment the lines below.
         /*
